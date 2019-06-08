@@ -1,7 +1,7 @@
 package model;
 public abstract class Company extends LegalPerson{
 	
-	private String type;
+	private String types;
 	
 	/**
 	* Description: This is the constructor method.
@@ -15,14 +15,14 @@ public abstract class Company extends LegalPerson{
 	* @param The name of the legal representative
 	* @param The type of the company.
 	*/
-	public Company(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, String type){
-		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative);
-		this.type = type;
+	public Company(String name, String nit, String address, int phone, int employee, double valueAseets, String constitutionDate,  String legalRepresentative, String type, String types){
+		super(name, nit, address, phone, employee, valueAseets, constitutionDate, legalRepresentative, type);
+		this.types = types;
 	}
-	public getType(){
-		return type;
+	public String getTypes(){
+		return types;
 	}
-	public void setType(String type){
-		this.type = type;
+	public void setTypes(String types){
+		this.types = types;
 	}
 }

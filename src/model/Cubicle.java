@@ -2,7 +2,7 @@ package model;
 
 public class Cubicle{
 	private String extension;
-	private Employed[] employed;
+	private Employee employee;
 	/**
 	* Description: This is the constructor method.
 	* @param The name of the product.
@@ -10,8 +10,21 @@ public class Cubicle{
 	* @param The amount of water you used.
 	* @param The available units of the product.
 	*/
-	public Cubicle(String extension, Employed[] employed){
+	public Cubicle(String extension, Employee employee){
 		this.extension = extension;
-		this.employed = employed;
+		this.employee = employee;
 	}
+	public String getExtension(){
+		return extension;
+	}
+	public void setExtension(String extension){
+		this.extension = extension;
+	}
+	public Employee getEmployee(){
+		return employee;
+	}
+	public void setEmployee(Employee employee){
+		this.employee = employee;
+	}
+	
 }

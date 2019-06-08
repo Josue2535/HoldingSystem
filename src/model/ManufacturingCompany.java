@@ -1,6 +1,6 @@
 package model;
 import java.util.ArrayList;
-public class ManufacturingCompany extends Company{
+public abstract class ManufacturingCompany extends Company{
 	private ArrayList<Product> products;
 	
 	/**
@@ -15,8 +15,8 @@ public class ManufacturingCompany extends Company{
 	* @param The name of the legal representative
 	* @param The type of the company.
 	*/
-	public ManufacturingCompany(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative){
-		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative);
+	public ManufacturingCompany(String name, String nit, String address, int phone, int employee, double valueAseets, String constitutionDate,  String legalRepresentative, String type, String types){
+		super( name, nit, address, phone, employee, valueAseets, constitutionDate, legalRepresentative, type, types);
 		products = new ArrayList<>();
 	}
 	public ArrayList<Product> getProducts(){

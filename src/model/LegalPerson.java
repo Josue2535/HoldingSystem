@@ -5,7 +5,7 @@ public abstract class LegalPerson{
 	private String nit;
 	private String address;
 	private int phone;
-	private int employed;
+	private int employee;
 	private String legalRepresentative;
 	private double valueAseets;
 	private String constitutionDate;
@@ -24,17 +24,17 @@ public abstract class LegalPerson{
 	* @param The name of the legal representative.
 	* @param The type of organization. 
 	*/
-	public LegalPerson(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, String type){
+	public LegalPerson(String name, String nit, String address, int phone, int employee, double valueAseets, String constitutionDate,  String legalRepresentative, String type){
 		this.name = name;
 		this.nit = nit;
 		this.address = address;
 		this.phone = phone;
-		this.employed = employed;
+		this.employee = employee;
 		this.valueAseets = valueAseets;
 		this.constitutionDate = constitutionDate;
 		this.legalRepresentative = legalRepresentative;
 		this.type = type;
-		theTower = new Cubicle[7][20]
+		theTower = new Cubicle[7][20];
 	}
 	
 	public String getName(){
@@ -54,7 +54,7 @@ public abstract class LegalPerson{
 	public String getAddress(){
 		return address;
 	}
-	public void setAddress(String){
+	public void setAddress(String address){
 		this.address = address;
 	}
 	public int getPhone(){
@@ -63,11 +63,11 @@ public abstract class LegalPerson{
 	public void setPhone(int phone){
 		this.phone = phone;
 	}
-	public int getEmployed(){
-		return employed;
+	public int getEmployee(){
+		return employee;
 	}
-	public void setEmployed(int employed){
-		this.employed = employed;
+	public void setEmployee(int employee){
+		this.employee = employee;
 	}
 	public double getValueAseets(){
 		return valueAseets;
@@ -91,7 +91,7 @@ public abstract class LegalPerson{
 		return type;
 	}
 	public void setType(String type){
-		this.type = type
+		this.type = type;
 	}
 	
 }

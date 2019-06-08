@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Holding extends LegalPersn{
+public class Holding extends LegalPerson{
 	private ArrayList<Company> companys;
 	
 	/**
@@ -18,9 +18,10 @@ public class Holding extends LegalPersn{
 	* @param The type of the company.
 	*/
 	public Holding(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, String type){
-		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, String type);
+		super( name,  nit,  address,  phone,  employed,  valueAseets,  constitutionDate,   legalRepresentative,  type);
 		companys = new ArrayList<>();
 	}
+	
 	
 	
 }

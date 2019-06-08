@@ -6,8 +6,8 @@ public class Medication extends ManufacturingCompany implements Consumable{
 	private String expiration;
 	private String modality;
 	
-	public Medication(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, String sanitaryRegistration, boolean state, String expiration, String modality){
-		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative);
+	public Medication(String name, String nit, String address, int phone, int employee, double valueAseets, String constitutionDate,  String legalRepresentative, String type, String types, String sanitaryRegistration, boolean state, String expiration, String modality){
+		super( name, nit, address, phone, employee, valueAseets, constitutionDate, legalRepresentative, type, types);
 		this.sanitaryRegistration = sanitaryRegistration;
 		this.state = state;
 		this.expiration = expiration;
@@ -36,5 +36,21 @@ public class Medication extends ManufacturingCompany implements Consumable{
 	}
 	public void setExpiration(String expiration){
 		this.expiration=expiration;
+	}
+	public int numberTreesPlanted(){
+		int trees = 0;
+		int agua = 0;
+		for(int i = 0; i<getProducts().size(); i++){
+			agua += getProducts().get(i).getWaterAmount();
+		}
+		if(agua>= 1 && agua<= 140){
+			trees = 6;
+		}else if(agua>= 141 && agua<= 800){
+			trees = 25;
+		}else if(agua>800){
+			trees = 200;
+		}
+		
+		return trees;
 	}
 }
