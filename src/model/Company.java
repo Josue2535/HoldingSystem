@@ -1,16 +1,7 @@
 package model;
 public abstract class Company extends LegalPerson{
-	public final static char AGRISILVIHUNTFISH = 'A';
-	public static final char EXPLOMINESQUARRIES = 'B';
-	public static final char MANUFACTURING = 'C';
-	public static final char ELECGASSTEAM = 'D';
-	public static final char CONSTRUCTION = 'E';
-	public static final char COMMERCE  = 'F';
-	public static final char TRANSSTORAGECOMU = 'G';
-	public static final char ESTINSUESTATESERV = 'H';
-	public static final char SOCIALCOMUNAL = 'I';
 	
-	private char type;
+	private String type;
 	
 	/**
 	* Description: This is the constructor method.
@@ -24,7 +15,7 @@ public abstract class Company extends LegalPerson{
 	* @param The name of the legal representative
 	* @param The type of the company.
 	*/
-	public Company(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, char type){
+	public Company(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, String type){
 		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative);
 		this.type = type;
 	}

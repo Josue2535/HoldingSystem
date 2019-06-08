@@ -15,9 +15,10 @@ public class Holding extends LegalPersn{
 	* @param The value in pesos of the assets.
 	* @param the date of incorporation.
 	* @param The name of the legal representative
+	* @param The type of the company.
 	*/
-	public Holding(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative){
-		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative);
+	public Holding(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, String type){
+		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative, String type);
 		companys = new ArrayList<>();
 	}
 	
