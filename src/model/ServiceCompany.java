@@ -20,4 +20,11 @@ public class ServiceCompany extends Company{
 		polls = new Poll[50];
 	}
 	
+	public getPolls(){
+		return polls;
+	}
+	public setPolls(Poll[] polls){
+		this.polls = polls;
+	}
+	
 }

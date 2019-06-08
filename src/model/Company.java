@@ -19,4 +19,10 @@ public abstract class Company extends LegalPerson{
 		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative);
 		this.type = type;
 	}
+	public getType(){
+		return type;
+	}
+	public void setType(String type){
+		this.type = type;
+	}
 }

@@ -19,5 +19,8 @@ public class ManufacturingCompany extends Company{
 		super(String name, String nit, String address, int phone, int employed, double valueAseets, String constitutionDate,  String legalRepresentative);
 		products = new ArrayList<>();
 	}
+	public ArrayList<Product> getProducts(){
+		return products;
+	}
 	
 }

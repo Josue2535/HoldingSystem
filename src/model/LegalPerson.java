@@ -37,4 +37,61 @@ public abstract class LegalPerson{
 		theTower = new Cubicle[7][20]
 	}
 	
+	public String getName(){
+		return name;
+	}
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public String getNit(){
+		return nit;
+	}
+	public void setNit(String nit){
+		this.nit = nit;
+	}
+	public String getAddress(){
+		return address;
+	}
+	public void setAddress(String){
+		this.address = address;
+	}
+	public int getPhone(){
+		return phone;
+	}
+	public void setPhone(int phone){
+		this.phone = phone;
+	}
+	public int getEmployed(){
+		return employed;
+	}
+	public void setEmployed(int employed){
+		this.employed = employed;
+	}
+	public double getValueAseets(){
+		return valueAseets;
+	}
+	public void setValueAseets(double valueAseets){
+		this.valueAseets = valueAseets;
+	}
+	public String getConstitutionDate(){
+		return constitutionDate;
+	}
+	public void setConstitutionDate(String constitutionDate){
+		this.constitutionDate = constitutionDate;
+	}
+	public String getLegalRepresentative(){
+		return legalRepresentative;
+	}
+	public void setLegalRepresentative(String legalRepresentative){
+		this.legalRepresentative = legalRepresentative;
+	}
+	public String getType(){
+		return type;
+	}
+	public void setType(String type){
+		this.type = type
+	}
+	
 }

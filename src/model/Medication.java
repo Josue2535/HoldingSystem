@@ -13,4 +13,28 @@ public class Medication extends ManufacturingCompany implements Consumable{
 		this.expiration = expiration;
 		this.modality = modality;
 	}
+	public String getSanitaryRegistration(){
+		return sanitaryRegistration;
+	}
+	public void setSanitaryRegistration(String sanitaryRegistration){
+		this.sanitaryRegistration=sanitaryRegistration;
+	}
+	public boolean getState(){
+		return state;
+	}
+	public void setState(boolean state){
+		this.state=state;
+	}
+	public String getModality(){
+		return modality;
+	}
+	public void setModality(String modality){
+		this.modality=modality;
+	}
+	public String getExpiration(){
+		return expiration;
+	}
+	public void setExpiration(String expiration){
+		this.expiration=expiration;
+	}
 }
