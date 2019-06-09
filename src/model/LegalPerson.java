@@ -94,4 +94,52 @@ public abstract class LegalPerson{
 		this.type = type;
 	}
 	
+	public String recorridoZ(String nombreE){
+		String ms = "";
+		boolean sd = false;
+		boolean se = false;
+		boolean sw = false;
+		while(!sw){
+			if(sd == false){
+				for(int i = 0; i<theTower[0].length; i++){
+					if(theTower[0][i]!=null && theTower[0][i].getEmployee()!=null){
+						if(nombreE.equals(theTower[0][i].getEmployeeName())){
+							ms = theTower[0][i].getExtension();
+							sw = true;
+						}
+					}
+					
+				}
+				sd = true;
+			}else if(!se){
+				for(int k = 1; k<theTower.length-1; k++){
+					if(theTower[k][19-k]!=null && theTower[k][18-k].getEmployee()!=null){
+						if(nombreE.equals(theTower[k][18-k].getEmployeeName())){
+							ms = theTower[k][18-k].getExtension();
+							sw = true;
+						}
+					}
+				}
+				se = true;
+			}else if(se && sw){
+				for(int i = 0; i<theTower[0].length; i++){
+					if(theTower[theTower.length][i]!=null && theTower[theTower.length][i].getEmployee()!=null){
+						if(nombreE.equals(theTower[theTower.length][i].getEmployeeName())){
+							ms = theTower[theTower.length][i].getExtension();
+							sw = true;
+						}
+					}
+					
+				}
+				
+			}
+			
+		}
+		if(ms.equals("")){
+			ms = "No se encontro al empleado";
+		}
+		return ms;
+	}
+	
+	
 }

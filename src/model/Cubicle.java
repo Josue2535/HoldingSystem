@@ -26,5 +26,12 @@ public class Cubicle{
 	public void setEmployee(Employee employee){
 		this.employee = employee;
 	}
+	public String getEmployeeName(){
+		String ms = "";
+		if(employee != null){
+			ms = employee.getName();
+		}
+		return ms;
+	}
 	
 }
