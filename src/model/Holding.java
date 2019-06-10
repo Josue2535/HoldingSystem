@@ -21,7 +21,22 @@ public class Holding extends LegalPerson{
 		super( name,  nit,  address,  phone,  employed,  valueAseets,  constitutionDate,   legalRepresentative,  type);
 		companys = new ArrayList<>();
 	}
-	
+	public ArrayList<Company> getCompanys(){
+		return companys;
+	}
+	public void addSurveys(String name, int s, int t, int c){
+		
+		ServiceCompany m = null;
+		for(int i = 0; i<companys.size(); i++){
+			if(name.equals(companys.get(i).getName())){
+				if(companys.get(i).getTypes().equals("Public service")){
+					
+					m = (ServiceCompany)companys.get(i);
+					m.addPolls(s,t,c);
+				}
+			}
+		}
+	}
 	
 	
 }

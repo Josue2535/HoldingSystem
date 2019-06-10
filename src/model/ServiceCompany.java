@@ -49,4 +49,5 @@ public abstract class ServiceCompany extends Company{
 		return prome/k; 
 	}
 	
+	
 }

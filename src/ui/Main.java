@@ -53,16 +53,11 @@ public class Main{
   System.out.println("                                                                          |");
   System.out.println("2.Business information                ");
   System.out.println("                                                                          |");
-  System.out.println("3.Add products            ");
+  System.out.println("3.Add poll            ");
   System.out.println("                                                                          |");
-  System.out.println("4.              ");
+  System.out.println("4.  Add a new employee to the company            ");
   System.out.println("                                                                          |");
-  System.out.println("5.Add surveys             ");
-  System.out.println("                                                                          |");
-  System.out.println("6.Add a new employee to the company           ");
-  System.out.println("                                                                          |");
-  System.out.println("7. Search for an employee extension              ");
-  System.out.println("                                                                          |");
+  System.out.println("5.Search for an employee extension             ");
   System.out.println("8.Exit the program.                                                        ");
   System.out.println("---------------------------------------------------------------------------");
 
@@ -92,7 +87,8 @@ public class Main{
     	String addreess = reader.nextLine();
     	
 		System.out.println("The company telephone:");
-    	String phone =reader.nextLine();
+    	int phone =reader.nextInt();
+		reader.nextLine();
     	
 		System.out.println("Employee numbers");
     	int employees = reader.nextInt();
@@ -186,15 +182,15 @@ public class Main{
 				System.out.println("Enter the national position According to exams saber11");
 				int positionSaber11 = reader.nextInt();
 				reader.nextLine();        		
-				HighSchool ms = new HighSchool(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT, numRegistry, acreeditedYears, strataOneandTwo, qualityTotal, positionSaber11);
-				user.addCompany(ms);
+				HighSchool ms = new HighSchool(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT, numRegistry, acreeditedYears, rectorName, strataOneandTwo, qualityTotal, positionSaber11);
+				user.getCompanys().add(ms);
 			}
         	else if (type == 2){
 				System.out.println("Enter the national position According to exams saberPro");
 				int  positionSaberPro = reader.nextInt();
 				reader.nextLine();
-				University m = new University(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT, numRegistry, acreeditedYears, strataOneandTwo, qualityTotal, positionSaberPro);
-				user.addCompany(m);
+				University m = new University(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT, numRegistry, acreeditedYears, rectorName, strataOneandTwo, qualityTotal, positionSaberPro);
+				user.getCompanys().add(m);
         	}
         	
         	System.out.println("The company has been correctly registered");
@@ -212,24 +208,15 @@ public class Main{
         	System.out.println("3.Aqueduct");
         	int typeSer =reader.nextInt();
         	reader.nextLine();
-        	String typeOfService="";
-        	if (typeSer ==1){
-        		typeOfService= "Sewerage";
-        	}
-        	else if (typeSer== 2){
-        		typeOfService="Energy";
-        	}
-        	else if (typeSer ==3){
-        		typeOfService="Aqueduct";
-        	}
+        	
         	System.out.println("Total number of subscribers");
         	int subscribersActual = reader.nextInt();
         	reader.nextLine();
         	System.out.println("Number of subscribers of estarto 3, 4, 5 and 6");
         	int subscribersOneandTwo= reader.nextInt();
         	reader.nextLine();
-        	PublicService services = new PublicService(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT,subscribersActual,subscribersOneandTwo);
-        	user.addCompany(services);
+        	PublicService services = new PublicService(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT,typeSer,subscribersActual,subscribersOneandTwo);
+        	user.getCompanys().add(services);
 
 
 
@@ -277,11 +264,11 @@ public class Main{
 					enem.getServices().add(Technology.CONSULTANCY);
 				}
 			}
-			user.addCompany(tecnologia);
+			user.getCompanys().add(enem);
         	
         }
         else if (valor==4){
-			typeT = "Manufacturing";
+			typeT = "Medication";
         	System.out.println("enter the sanitary registry");    
 			String sanitary = reader.nextLine();
 			System.out.println("enter the state of sanitary registry:");
@@ -293,10 +280,13 @@ public class Main{
 			if(sta == 1){
 				state = true;
 				
-			}else{
-				
 			}
-			Medication medi = new Medication(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT, sanitary, state);
+			System.out.println("expiration date");    
+			String expiration = reader.nextLine();
+			System.out.println("modality");    
+			String modality = reader.nextLine();
+			
+			Medication medi = new Medication(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT, sanitary, state, expiration, modality);
 			System.out.println("How many products does it have?");
 			int algo = reader.nextInt();
 			reader.nextLine();
@@ -317,11 +307,11 @@ public class Main{
 
         }else if(valor == 5){
 			typeT = "Manufacturing";
-			ManufacturingCompany manu = new ManufacturingCompany(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT);
+			ManufacturingCompany manu = new FoodCompanies(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT, 0);
 			System.out.println("How many products does it have?");
-			int algo = reader.nextInt();
+			int algos = reader.nextInt();
 			reader.nextLine();
-			for(int i = 0; i<algo; i++){
+			for(int i = 0; i<algos; i++){
 				System.out.println("Enter name of product");
 				String namep = reader.nextLine();
 				System.out.println("Enter code of product");
@@ -333,20 +323,20 @@ public class Main{
 				int units = reader.nextInt();
 				reader.nextLine();
 				Product pr = new Product(namep, codep, waterAmount, units);
-				medi.getProducts().add(pr);
+				manu.getProducts().add(pr);
 			}
 		}
 		
         else if (valor == 6){
-        	typeT = "Manufacturing";
+        	typeT = "Food Compani";
 			System.out.println("How many group does it have?");
 			int algo = reader.nextInt();
 			reader.nextLine();
 			FoodCompanies foods = new FoodCompanies(name, nit, addreess, phone, employees, valueAseets, constitucionDate, legalRepresentative, typeofservice, typeT, algo);
 			System.out.println("How many products does it have?");
-			int algo = reader.nextInt();
+			int algose = reader.nextInt();
 			reader.nextLine();
-			for(int i = 0; i<algo; i++){
+			for(int i = 0; i<algose; i++){
 				System.out.println("Enter name of product");
 				String namep = reader.nextLine();
 				System.out.println("Enter code of product");
@@ -358,7 +348,7 @@ public class Main{
 				int units = reader.nextInt();
 				reader.nextLine();
 				Product pr = new Product(namep, codep, waterAmount, units);
-				medi.getProducts().add(pr);
+				foods.getProducts().add(pr);
 			}
 
         }
@@ -371,75 +361,47 @@ public class Main{
 
     else if (userInput == 2){
 
-    	System.out.println(user.showCompanys());
+    	
 
     }
     else if (userInput == 3){
 
-    	System.out.println("A que empresa de manufactura le desea agregar productos ?");
-    	System.out.println(user.showNameCompanys()+"\n");
-    	String company = reader.nextLine();
-    	user.verific(company);
-    	System.out.println("Cuantos productos desea agregar: ");
-    	int cantProduct= reader.nextInt();
-    	reader.nextLine();
-    	for (int i = 0; i<cantProduct;i++){
-    	System.out.println("Product "+(i+1)+":");
-    	System.out.println("Digite el nombre del producto:");
-    	String name =reader.nextLine();
-    	System.out.println("digite el codigo del producto:");
-    	String code = reader.nextLine();
-    	System.out.println("Digite la cantidad de agua:");
-    	double water = reader.nextDouble();
-    	reader.nextLine();
-    	System.out.println("Numero de unidades del producto:");
-    	int numUnits = reader.nextInt();
-    	reader.nextLine();
-    	
-        Product p = new Product(name,code,water,numUnits);
-        if(user.verific(company) != null){
-         user.verific(company).add(p);
-     }
- }
+    	System.out.println("Enter the name of the company");
+		String name = reader.nextLine();
+		System.out.println("rate the service provided (1 to 5)");
+		int serv = reader.nextInt();
+		reader.nextLine();
+		System.out.println("rate the response time given (1 to 5)");
+		int time = reader.nextInt();
+		reader.nextLine();
+		System.out.println("rate the cost / benefit ratio of the service purchased (1 to 5)");
+		int cos = reader.nextInt();
+		reader.nextLine();
+		Poll pol = new Poll(serv, time, cos);
+		user.addSurveys(name, serv, time, cos);
+	
 
-}
+	}
     else if(userInput== 4){
 
 
-    	System.out.println("A que Empresa de Servicios le desea agregar encuestas:");
-    	System.out.println(user.showCompanysNameService());
-    	String verific =reader.nextLine();
-    	user.verificService(verific);
-    	System.out.println("CALIFICA DE 1 A 5 LAS SIGUIENTES PREGUNTAS  SIENDO 1 NADA SATISFECHO Y 5 MUY SATISFECHO ");
-    	System.out.println("1.El servicio Prestado ?");
-    	int pregunt1 = reader.nextInt();
-    	reader.nextLine();
-    	System.out.println("2.El tiempo de respuesta dado?");
-    	int pregunt2 = reader.nextInt();
-    	reader.nextLine();
-    	System.out.println("3.La relacion costo/Beneficio alquirido?");
-    	int pregunt3 = reader.nextInt();
-    	reader.nextLine();
+    	
 
-    	Poll pollPrincipal = new Poll (pregunt1,pregunt2,pregunt3);
-    	if (user.verificService(verific)!=null){
-    	user.verificService(verific).add(pollPrincipal);
+		
 
-    	}
-
+    	 	
     }
-
-    	}  	
-    }
+	}
+   }
 
 
     public void init(){
 
 
     }
+   }
 
 
 
 
 
-}
