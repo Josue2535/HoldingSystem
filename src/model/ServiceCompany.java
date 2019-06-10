@@ -26,6 +26,12 @@ public abstract class ServiceCompany extends Company{
 	public void	setPolls(Poll[] polls){
 		this.polls = polls;
 	}
+	/**
+	* Description : This method allow create a new tecnologyc center
+	* @param serviceRendered : This is the kind of service that the cnter have
+	* @param responseTime : This is the time that the company response the service
+	* @param costBenfit : This is the price of the company promove
+	*/
 	
 	public void addPolls(int serviceRendered, int responseTime, int costBenfit){
 		Poll pol = new Poll( serviceRendered,  responseTime,  costBenfit);
@@ -37,6 +43,10 @@ public abstract class ServiceCompany extends Company{
 			}
 		}
 	}
+	/**
+	* Description : This method allow calculated the totally average of the centers
+	* @return prome : The totally price 
+	*/
 	public int averageTotal(){
 		int prome=0;
 		int k = 0;

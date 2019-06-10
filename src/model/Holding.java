@@ -24,6 +24,13 @@ public class Holding extends LegalPerson{
 	public ArrayList<Company> getCompanys(){
 		return companys;
 	}
+	/**
+	* Description : This method allow create a survey with 3 questions to receive the answers
+	* @param name : Name of the survey to the company
+	* @param s : Questions number1
+	* @param t : Questions number2
+	* @param c : Questions number3
+	*/
 	public void addSurveys(String name, int s, int t, int c){
 		
 		ServiceCompany m = null;
@@ -37,9 +44,7 @@ public class Holding extends LegalPerson{
 			}
 		}
 	}
-	public void addEmployeeHol(Employee a){
-		
-	}
+	
 	public Company findExtens(String name){
 		Company m = null;
 		for(int i = 0; i<companys.size(); i++){

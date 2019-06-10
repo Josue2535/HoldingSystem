@@ -93,7 +93,11 @@ public abstract class LegalPerson{
 	public void setType(String type){
 		this.type = type;
 	}
-	
+	/**
+	* Description : This method allow find a employeed and know his extension with a especially way (L)
+	* @param name of the employeed : This is the name of the employeed that you wanna know
+	* @return message: Return a message with the information
+	*/
 	public String pathL(String nameEmple){
 		int j = 0;
 		boolean abajo = true;
@@ -117,6 +121,11 @@ public abstract class LegalPerson{
 		}
 		return message;
 	}
+	/**
+	* Description : This method allow find a employeed and know his extension with a especially way (X)
+	* @param name of the employeed : This is the name of the employeed that you wanna know
+	* @return message: Return a message with the information
+	*/
 	public String pathX(String nameEmple){
 		int m = theTower.length;
 		boolean stop = false;
@@ -148,7 +157,11 @@ public abstract class LegalPerson{
 		}
 		return message;
 	}
-	
+	/**
+	* Description : This method allow find a employeed and know his extension with a especially way (Z)
+	* @param name of the employeed : This is the name of the employeed that you wanna know
+	* @return message: Return a message with the information
+	*/
 	public String pathZ(String nameEmple){
 		String message = "El empleado no existe en este recorrido";
 		boolean stop = false;
@@ -181,6 +194,11 @@ public abstract class LegalPerson{
 		}
 		return message;
 	}
+	/**
+	* Description : This method allow find a employeed and know his extension with a especially way (O)
+	* @param name of the employeed : This is the name of the employeed that you wanna know
+	* @return message: Return a message with the information
+	*/
 	public String pathO(String nameEmple){
 		String message =  "El empleado no existe en este recorrido";
 		boolean stop = false;
@@ -211,7 +229,11 @@ public abstract class LegalPerson{
 		}
 		return message;
 	}
-	
+	/**
+	* Description : This method allow find a employeed and know his extension with a especially way (E)
+	* @param name of the employeed : This is the name of the employeed that you wanna know
+	* @return message: Return a message with the information
+	*/
 	public String pathE(String nameEmple){
 		boolean stop = false;
 		String message = "El empleado no existe en este recorrido";
@@ -251,6 +273,13 @@ public abstract class LegalPerson{
 		message += "Date of the company "+constitutionDate+"\n";
 		message += "Type of company "+type+"\n";
 		return message;
+	}
+	public String lookMail(String cargo){
+		String ms = "";
+		return ms;
+	}
+	public void addEmployee(){
+		
 	}
 	
 }

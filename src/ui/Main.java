@@ -57,7 +57,8 @@ public class Main{
   System.out.println("                                                                          |");
   System.out.println("4.Add a new employee to the company            ");
   System.out.println("                                                                          |");
-  System.out.println("5.Search for an employee extension             ");
+  System.out.println("5.Search for an employee extension             " + "\n");
+  System.out.println("6.look for the mail of the employees according to the position             " + "\n");
   System.out.println("8.Exit the program.                                                        ");
   System.out.println("---------------------------------------------------------------------------");
 
@@ -389,7 +390,7 @@ public class Main{
 
 
     	
-
+		user.addEmployee();
 		
 
     	 	
@@ -444,6 +445,9 @@ public class Main{
 				System.out.println(user.findExtens( nameE).pathE( name));
 			}
 		}
+	}else if(userInput == 6){
+		String m = "";
+		user.lookMail(m);
 	}
 	}
    }
