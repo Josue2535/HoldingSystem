@@ -4,7 +4,12 @@ public class Employee{
 	private String name;
 	private String position;
 	private String mail;
-	
+	/**
+	* Description : This is the construtor method
+	* @param name : This is the name of the employee
+	* @param position : This is the position of the employee in the floor
+	* @param mail : This is the mail of the employee
+	*/
 	public Employee(String name, String position, String mail){
 		this.name = name;
 		this.position = position;

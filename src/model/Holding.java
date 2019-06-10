@@ -37,6 +37,22 @@ public class Holding extends LegalPerson{
 			}
 		}
 	}
+	public void addEmployeeHol(Employee a){
+		
+	}
+	public Company findExtens(String name){
+		Company m = null;
+		for(int i = 0; i<companys.size(); i++){
+			if(name.equals(companys.get(i).getName())){
+				
+					
+				m = companys.get(i);
+					
+				
+			}
+		}
+		return m;
+	}
 	
 	
 }

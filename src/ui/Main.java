@@ -55,7 +55,7 @@ public class Main{
   System.out.println("                                                                          |");
   System.out.println("3.Add poll            ");
   System.out.println("                                                                          |");
-  System.out.println("4.  Add a new employee to the company            ");
+  System.out.println("4.Add a new employee to the company            ");
   System.out.println("                                                                          |");
   System.out.println("5.Search for an employee extension             ");
   System.out.println("8.Exit the program.                                                        ");
@@ -360,8 +360,11 @@ public class Main{
 
 
     else if (userInput == 2){
-
-    	
+		String m = "";
+		for(int j = 0; j<user.getCompanys().size(); j++){
+			m += user.getCompanys().toString();
+		}
+    	System.out.println(m);
 
     }
     else if (userInput == 3){
@@ -390,7 +393,58 @@ public class Main{
 		
 
     	 	
-    }
+    }else if(userInput == 5){
+		System.out.println("Enter the name employee");
+		String name = reader.nextLine();
+		System.out.println("enter where you want to search");
+		System.out.println("1.Holding");
+		System.out.println("2.Other company");
+		int e = reader.nextInt();
+		reader.nextLine();
+		if(e == 1){
+			System.out.println("enter the way you want to search");
+			System.out.println("1. in L");
+			System.out.println("2. in X");
+			System.out.println("3. in Z");
+			System.out.println("4. in O");
+			System.out.println("5. in E");
+			int el = reader.nextInt();
+			reader.nextLine();
+			if(el == 1){
+				System.out.println(user.pathL( name));
+			}else if(el == 2){
+				System.out.println(user.pathX( name));
+			}else if(el == 3){
+				System.out.println(user.pathZ( name));
+			}else if(el == 4){
+				System.out.println(user.pathO( name));
+			}else if(el == 5){
+				System.out.println(user.pathE( name));
+			}
+		}else if(e == 2){
+			System.out.println("Enter the name of the company");
+			String nameE = reader.nextLine();
+			System.out.println("enter the way you want to search");
+			System.out.println("1. in L");
+			System.out.println("2. in X");
+			System.out.println("3. in Z");
+			System.out.println("4. in O");
+			System.out.println("5. in E");
+			int el = reader.nextInt();
+			reader.nextLine();
+			if(el == 1){
+				System.out.println(user.findExtens( nameE).pathL( name));
+			}else if(el == 2){
+				System.out.println(user.findExtens( nameE).pathX( name));
+			}else if(el == 3){
+				System.out.println(user.findExtens( nameE).pathZ( name));
+			}else if(el == 4){
+				System.out.println(user.findExtens( nameE).pathO( name));
+			}else if(el == 5){
+				System.out.println(user.findExtens( nameE).pathE( name));
+			}
+		}
+	}
 	}
    }
 

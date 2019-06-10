@@ -48,6 +48,11 @@ public abstract class ServiceCompany extends Company{
 		}
 		return prome/k; 
 	}
+	public String toString(){
+		String message = "";
+		message = "Average of all surveys "+averageTotal()+"\n";
+		return message;
+	}
 	
 	
 }

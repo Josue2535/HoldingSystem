@@ -4,7 +4,12 @@ public class Poll{
 	private int serviceRendered;
 	private int responseTime;
 	private int costBenfit;
-	
+	/**
+	* Description : This is the constructor method
+	* @param serviceRentered : This is the rentered service that company can promove
+	* @param responseTime : This the the response time that the company have
+	* @param costBenfit : This is the price that company promove
+	*/
 	public Poll(int serviceRendered, int responseTime, int costBenfit){
 		this.serviceRendered = serviceRendered;
 		this.responseTime = responseTime;

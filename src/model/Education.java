@@ -77,5 +77,19 @@ public abstract class Education extends ServiceCompany implements Taxable{
 		}
 		return pro;
 	}
+	public String toString(){
+		String message = super.toString();
+		       message += "+-------------------------------------------------------------------------------------------------------------+\n";
+			   message += "| ************* EDUCATIONAL ENTERPRISE INFORMATION************* +\n";
+			   message += "+-------------------------------------------------------------------------------------------------------------+\n";
+			   message += "|\n";
+			   message += "| Registry "+registry+"\n";
+			   message += "| Years of accreditation: "+accreditedYears+"\n";
+			   message += "| Name of the rector: "+rectorName+"\n";
+			   message += "| Students in stratum 1 and 2: "+studentsStratum+"\n";
+			   message += "| Total students: "+students+"\n";
+			   message += "|The proculture tax is: " + calctTaxeble() + "\n";
+		return message;
+	}
 	
 }
